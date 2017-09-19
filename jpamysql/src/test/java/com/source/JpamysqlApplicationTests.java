@@ -42,4 +42,11 @@ public class JpamysqlApplicationTests {
 		assertEquals("Did not get all games", 3, games.size());
 	}
 
+	@Test
+	public void testFindGame() throws Exception {
+		List<Game> camelUpList = gameRepository.findByName("Camel Up");
+		assertEquals("Found wrong number of Camel Ups", 1, camelUpList.size());
+		assertEquals("Found wrong name", "Camel Up", camelUpList.get(0).getName());
+	}
+
 }
